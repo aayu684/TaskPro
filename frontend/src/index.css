@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 min-h-screen text-gray-800 font-sans;
+    background: linear-gradient(-45deg,
+        #ee7752,
+        #e73c7e,
+        #23a6d5,
+        #23d5ab,
+        #9b59b6,
+        #f1c40f);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-[20px];
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+
+  .glass-input {
+    @apply bg-white/20 border border-white/40 text-gray-900 placeholder-gray-600 focus:bg-white/30 focus:border-white/60 focus:ring-2 focus:ring-white/50 focus:outline-none transition-all duration-300;
+  }
+
+  .glass-card-hover {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #bd4a26, #b81250, #0f7196, #0f9c7a, #702c8c, #ad8c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Sparkle animation for interactive elements */
+@keyframes sparkleAnim {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(2) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.sparkle-container {
+  @apply relative overflow-hidden;
+}
+
+.sparkle {
+  @apply absolute pointer-events-none rounded-full bg-white/80;
+  animation: sparkleAnim 0.6s ease-out forwards;
+}

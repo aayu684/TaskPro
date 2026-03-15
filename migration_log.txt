@@ -1,0 +1,7 @@
+Django setup successful.
+Running migrations...
+[36;1mOperations to perform:[0m
+[1m  Apply all migrations: [0madmin, auth, contenttypes, sessions
+[36;1mRunning migrations:[0m
+  No migrations to apply.
+Migrations complete.
